@@ -14,8 +14,7 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getAllMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(BASE_URL +  "/popular" + API_KEY);
+  getAllMovies(): Observable<Array<Movie>> {
+    return this.http.get<Array<Movie>>(BASE_URL +  "/popular" + API_KEY);
   }
 }
-// const API_KEY = "&api_key=f0afdcb539873fbfedd62017b3dec268";
