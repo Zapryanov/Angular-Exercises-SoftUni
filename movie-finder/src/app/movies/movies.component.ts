@@ -10,16 +10,17 @@ import { MovieService } from '../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
   singleMovie: Movie;
-  popularMovies: Movie;
+  popularMovies: Movie[];
   upcomingMovies: Movie;
-  // inTheatreMovies: Movie;
   topRatedMovies: Movie;
+
+  message = null;
+
   constructor(private moviesService: MovieService) { }
 
   ngOnInit() {
     this.moviesService.getPopularMovies().subscribe(data => {
       this.popularMovies = data["results"].slice(0, 6);
-      this.singleMovie = this.popularMovies[0];
     })
 
     this.moviesService.getUpcomingMovies().subscribe(data => {
@@ -29,6 +30,11 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getTopRatedMovies().subscribe(data => {
       this.topRatedMovies = data["results"].slice(0, 6);
     })
+  }
+
+  fromChild(event) {
+    console.log(event)
+    this.message = event;
   }
 
 }
