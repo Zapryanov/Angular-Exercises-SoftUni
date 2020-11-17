@@ -26,10 +26,6 @@ export class MoviesComponent implements OnInit {
       this.upcomingMovies = data["results"].slice(0, 6);
     })
 
-    // this.moviesService.getInTheatreMovies().subscribe(data => {
-    //   this.inTheatreMovies = data["results"].slice(0, 6);
-    // })
-
     this.moviesService.getTopRatedMovies().subscribe(data => {
       this.topRatedMovies = data["results"].slice(0, 6);
     })
