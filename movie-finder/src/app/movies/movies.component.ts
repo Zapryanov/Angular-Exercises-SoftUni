@@ -9,18 +9,29 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  popularMovies: Array<Movie>;
   singleMovie: Movie;
+  popularMovies: Movie;
+  upcomingMovies: Movie;
+  // inTheatreMovies: Movie;
+  topRatedMovies: Movie;
   constructor(private moviesService: MovieService) { }
 
   ngOnInit() {
-    this.moviesService.getAllMovies().subscribe(data => {
-      console.log("From component - INSIDE");
-      this.popularMovies = data["results"];
-      console.log("popular movies " + this.popularMovies)
-      console.log(this.popularMovies);
-
+    this.moviesService.getPopularMovies().subscribe(data => {
+      this.popularMovies = data["results"].slice(0, 6);
       this.singleMovie = this.popularMovies[0];
+    })
+
+    this.moviesService.getUpcomingMovies().subscribe(data => {
+      this.upcomingMovies = data["results"].slice(0, 6);
+    })
+
+    // this.moviesService.getInTheatreMovies().subscribe(data => {
+    //   this.inTheatreMovies = data["results"].slice(0, 6);
+    // })
+
+    this.moviesService.getTopRatedMovies().subscribe(data => {
+      this.topRatedMovies = data["results"].slice(0, 6);
     })
   }
 
