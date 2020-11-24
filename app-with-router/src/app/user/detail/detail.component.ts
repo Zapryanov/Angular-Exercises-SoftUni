@@ -15,11 +15,11 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: ActivatedRoute
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    this.router.params.pipe(
+    this.route.params.pipe(
       tap(({ id }) => {
         this.user = null;
         this.currentUserId = +id;
