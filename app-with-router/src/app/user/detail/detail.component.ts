@@ -11,6 +11,7 @@ import { tap, switchMap } from 'rxjs/operators';
 export class DetailComponent implements OnInit {
 
   user: any;
+  currentUserId: number;
 
   constructor(
     private userService: UserService,
@@ -19,7 +20,10 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.params.pipe(
-      tap(() => this.user = null),
+      tap(({ id }) => {
+        this.user = null;
+        this.currentUserId = +id;
+      }),
       switchMap(({ id }) => this.userService.loadUser(id))
     ).subscribe(user => {
       this.user = user;
