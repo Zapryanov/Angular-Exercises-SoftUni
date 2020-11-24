@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AccessGuard } from './guards/access.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AccessGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
