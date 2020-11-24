@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
+import { tap, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-detail',
@@ -17,13 +18,12 @@ export class DetailComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.router.params.subscribe(({ id }) => {
-      this.user = null;
-      this.userService.loadUser(id).subscribe(user => {
+    this.router.params.pipe(
+      tap(() => this.user = null),
+      switchMap(({ id }) => this.userService.loadUser(id))
+    ).subscribe(user => {
       this.user = user;
     })
-    })
-
   }
 
 }
