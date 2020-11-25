@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { PostListComponent } from './post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CoreModule } from './core/core.module';
     ThemeListComponent,
     AsideComponent,
     ThemeListItemComponent,
-    HomeComponent
+    HomeComponent,
+    PostListComponent
   ],
   imports: [
     CoreModule,
