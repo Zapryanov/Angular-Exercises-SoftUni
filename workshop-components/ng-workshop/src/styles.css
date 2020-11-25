@@ -9,6 +9,12 @@ app-root {
   width: 100%;
 }
 
+app-home {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 body {
     max-width: 1366px;
     margin: auto;
