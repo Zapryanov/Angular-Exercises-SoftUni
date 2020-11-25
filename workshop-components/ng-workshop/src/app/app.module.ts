@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ThemeListComponent } from './theme-list/theme-list.component';
-import { AsideComponent } from './aside/aside.component';
+import { AsideComponent } from './core/aside/aside.component';
 import { ThemeListItemComponent } from './theme-list-item/theme-list-item.component';
 import { UserService } from './user.service';
 import { storageServiceProvider } from './storage.service';
