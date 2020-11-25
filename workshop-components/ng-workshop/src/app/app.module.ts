@@ -12,6 +12,9 @@ import { UserService } from './user.service';
 import { storageServiceProvider } from './storage.service';
 import { ThemeService } from './theme.service';
 import { PostService } from './post.service';
+import { HomeComponent } from './home/home.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,13 @@ import { PostService } from './post.service';
     FooterComponent,
     ThemeListComponent,
     AsideComponent,
-    ThemeListItemComponent
+    ThemeListItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     UserService,
