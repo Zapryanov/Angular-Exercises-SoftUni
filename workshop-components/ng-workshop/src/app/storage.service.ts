@@ -1,4 +1,4 @@
-import { Injectable, Provider, PLATFORM_ID } from '@angular/core';
+import { Provider, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 interface IStorage {
@@ -18,6 +18,7 @@ export function storageFactory(platformId: string): any {
   if (isPlatformServer(platformId)) {
     return new ServerStorage();
   }
+  throw new Error("No implementation for this platform: " + platformId);
 }
 
 export const storageServiceProvider: Provider = {
@@ -26,7 +27,6 @@ export const storageServiceProvider: Provider = {
   deps: [PLATFORM_ID]
 }
 
-@Injectable()
 export class BrowserStorage {
   localStorage = localStorage;
 
@@ -49,7 +49,6 @@ export class BrowserStorage {
   }
 }
 
-@Injectable()
 export class ServerStorage {
   localStorage = {
     data: {},
