@@ -9,14 +9,14 @@ import { PostService } from '../post.service';
 })
 export class PostListComponent implements OnInit {
 
-  @Input() postId: string;
+  @Input() themeId: string;
 
   postList: IPost[];
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.loadPostList(this.postId,3).subscribe(postList => {
+    this.postService.loadPostList(this.themeId,3).subscribe(postList => {
       this.postList = postList;
     })
   }
