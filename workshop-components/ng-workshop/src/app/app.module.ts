@@ -13,6 +13,8 @@ import { storageServiceProvider } from './storage.service';
 import { ThemeService } from './theme.service';
 import { PostService } from './post.service';
 import { PostListComponent } from './post-list/post-list.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { PostListComponent } from './post-list/post-list.component';
     AsideComponent,
     ThemeListItemComponent,
     PostListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     UserService,
