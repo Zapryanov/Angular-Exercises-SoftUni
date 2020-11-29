@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ITheme } from '../../interfaces';
+import { ITheme } from '../../shared/interfaces';
 import { ThemeService } from '../../theme.service';
 
 @Component({
