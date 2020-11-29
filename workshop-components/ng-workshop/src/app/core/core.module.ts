@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
 import { storageServiceProvider } from './storage.service';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { storageServiceProvider } from './storage.service';
     CommonModule
   ],
   providers: [
-    storageServiceProvider
+    storageServiceProvider,
+    UserService
   ],
   exports: [
     HeaderComponent,
