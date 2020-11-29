@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
-import { IPost } from './interfaces/post';
+import { environment } from '../../environments/environment';
+import { IPost } from '../interfaces/post';
 
 const apiUrl = environment.apiUrl;
 
