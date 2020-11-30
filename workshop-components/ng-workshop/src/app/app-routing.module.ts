@@ -9,5 +9,4 @@ const routes: Routes = [
   }
 ];
 
-
 export const AppRoutingModule = RouterModule.forRoot(routes);

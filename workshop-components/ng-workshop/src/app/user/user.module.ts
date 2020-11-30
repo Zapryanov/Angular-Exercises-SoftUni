@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './user.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     RegisterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    UserRoutingModule
   ],
   providers: [
     UserService
