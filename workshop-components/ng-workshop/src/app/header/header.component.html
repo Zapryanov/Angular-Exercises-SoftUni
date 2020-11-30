@@ -8,16 +8,16 @@
     <div class="mini-navbar">
       <ul>
           <li *ngIf="isLogged">
-              <a >John's profile</a>
+              <a>John's profile</a>
           </li>
           <li *ngIf="isLogged">
               <a (click)="logoutHandler()">Logout</a>
           </li>
           <li *ngIf="!isLogged">
-              <a >Login</a>
+              <a>Login</a>
           </li>
           <li *ngIf="!isLogged">
-              <a >Register</a>
+              <a>Register</a>
           </li>
       </ul>
     </div>

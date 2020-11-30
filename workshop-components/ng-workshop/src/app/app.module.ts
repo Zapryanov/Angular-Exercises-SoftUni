@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ThemeModule } from './theme/theme.module';
 import { PostModule } from './post/post.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PostModule } from './post/post.module';
     HttpClientModule,
     AppRoutingModule,
     ThemeModule,
-    PostModule
+    PostModule,
+    UserModule
   ],
   providers: [
 
