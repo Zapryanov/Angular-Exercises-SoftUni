@@ -1,21 +1,25 @@
 <header>
+
+
   <div class="mini-navbar-wrap">
     <div class="logo-wrap">
-        <p class="logo"><span class="logo">SoftUni Forum</span></p>
+      <p class="logo"><span class="logo">SoftUni Forum</span></p>
     </div>
-    <div class="mini-navbar" *ngIf="!isLogged">
-        <ul>
-            <li>
-                <a href="#" (click)="loginHandler()">Login</a>
-            </li>
-            <li>
-                <a href="#">Register</a>
-            </li>
-        </ul>
-    </div>
-    <div class="mini-navbar" *ngIf="isLogged">
-      <div>Hello [username]@localhost@.com</div>
-      <a href="#" (click)="logoutHandler()">Logout</a>
+    <div class="mini-navbar">
+      <ul>
+          <li *ngIf="isLogged">
+              <a >John's profile</a>
+          </li>
+          <li *ngIf="isLogged">
+              <a (click)="logoutHandler()">Logout</a>
+          </li>
+          <li *ngIf="!isLogged">
+              <a >Login</a>
+          </li>
+          <li *ngIf="!isLogged">
+              <a >Register</a>
+          </li>
+      </ul>
     </div>
   </div>
   <nav>
