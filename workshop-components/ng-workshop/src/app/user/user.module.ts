@@ -5,10 +5,11 @@ import { UserService } from './user.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
-
-
 @NgModule({
-  declarations: [ProfileComponent, LoginComponent, RegisterComponent],
+  declarations: [
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent],
   imports: [
     CommonModule
   ],
