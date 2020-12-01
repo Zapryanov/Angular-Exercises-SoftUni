@@ -11,7 +11,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ProfileComponent,
     LoginComponent,
-    RegisterComponent],
+    RegisterComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,

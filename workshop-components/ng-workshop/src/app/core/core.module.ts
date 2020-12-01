@@ -3,16 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AsideComponent } from './aside/aside.component';
 import { storageServiceProvider } from './storage.service';
 import { RouterModule } from '@angular/router';
-
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent,
-    AsideComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -20,11 +18,11 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     storageServiceProvider,
+    AuthGuard
   ],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    AsideComponent
-  ]
+    FooterComponent
+  ],
 })
 export class CoreModule { }

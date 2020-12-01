@@ -16,11 +16,11 @@ export class ThemeListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.themeService.loadThemeList().subscribe(themeList => {
       this.themeList = themeList;
-    })
+    });
   }
 
   ngAfterViewInit(): void {
-    console.log("View was initialized!");
+    console.log('View was initialized');
   }
 
 }

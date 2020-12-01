@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IPost } from '../shared/interfaces/post';
@@ -12,6 +12,8 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   loadPostList(themeId: string, limit?: number): Observable<IPost[]> {
-    return this.http.get<IPost[]>(`${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`);
+    return this.http.get<IPost[]>(
+      `${apiUrl}/posts${limit ? `?limit=${limit}` : ''}`
+    );
   }
 }
