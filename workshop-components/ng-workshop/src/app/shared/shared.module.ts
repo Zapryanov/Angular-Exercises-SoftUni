@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IsEmptyDirective } from './is-empty.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [IsEmptyDirective],
   imports: [
     CommonModule
   ]
