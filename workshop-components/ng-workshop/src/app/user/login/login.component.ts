@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
     return this.form.email.value.length === 0 || this.form.password.value.length === 0;
   }
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +42,8 @@ export class LoginComponent implements OnInit {
   }
 
   submitFormHandler(): void {
-
+    console.log(this.form)
+    this.userService.login();
   }
 
 }
