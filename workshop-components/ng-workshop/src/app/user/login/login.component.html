@@ -5,9 +5,10 @@
 
       <p class="field field-icon">
           <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-          <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+          <input #userEmail class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com" (keyup)="updateInputValue('email', userEmail.value)">
       </p>
-      <p class="error">
+
+      <p *ngIf="showEmailError" class="error">
           Email is required!
       </p>
       <!-- <p class="error">
@@ -16,16 +17,17 @@
 
       <p class="field field-icon">
           <label for="password"><span><i class="fas fa-lock"></i></span></label>
-          <input type="password" name="password" id="password" placeholder="******">
+          <input type="password" name="password" id="password" placeholder="******" (keyup)="updateInputValue('password' ,userEmail.value)">
       </p>
-      <!-- <p class="error">
+      <p *ngIf="showPasswordError" class="error">
           Password is required!
       </p>
-      <p class="error">
+
+      <!-- <p class="error">
           Password must be at least 4 characters!
       </p> -->
 
-      <button disabled>Login</button>
+      <button type="button" (click)="submitFormHandler()" [disabled]="hasFormErrors">Login</button>
 
       <p class="text-center">
           Have an account?
