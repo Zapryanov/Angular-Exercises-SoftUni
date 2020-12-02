@@ -1,2 +1,18 @@
 
+<p [appHighlight]="isHighlighted" color="green">SOME TEXT</p>
+<button (click)="toggleHighlightHandler()">ToggleHighlight </button>
 <router-outlet></router-outlet>
+
+<P *ngIf="isHighlighted">IS HIGHLIGHTED</P>
+
+<ng-template [ngIf]="isHighlighted">
+  <div>From ng-template</div>
+</ng-template>
+
+<div *ngFor="let person of users; let i = index">
+  <p>{{i + 1}}: {{person.name}} is {{person.age}} years old.</p>
+</div>
+
+<ng-template ngFor [ngForOf]="users" let-person>
+  <p>{{person.name}} is {{person.age}} years old.</p>
+</ng-template>

@@ -6,7 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'forms-app';
-  myClass = true;
-  myOtherClass = true;
+  isHighlighted = false;
+
+  users = [
+    {
+      name: "Ivan",
+      age: 23
+    },
+    {
+      name: "Petya",
+      age: 20
+    },
+    {
+      name: "Lili",
+      age: 21
+    }
+  ];
+
+  toggleHighlightHandler() {
+    this.isHighlighted = !this.isHighlighted;
+  }
 }
