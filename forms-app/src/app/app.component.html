@@ -3,7 +3,10 @@
 <button (click)="toggleHighlightHandler()">ToggleHighlight </button>
 <router-outlet></router-outlet>
 
-<P *ngIf="isHighlighted">IS HIGHLIGHTED</P>
+<ng-template #elseTemplate>
+  <p>Isn't HIGHLIGHTED...!!!</p>
+</ng-template>
+<P *ngIf="isHighlighted; else elseTemplate;">IS HIGHLIGHTED</P>
 
 <ng-template [ngIf]="isHighlighted">
   <div>From ng-template</div>
