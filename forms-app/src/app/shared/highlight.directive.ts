@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHighlight]',
+  exportAs: 'appHighlight'
 })
 export class HighlightDirective implements OnChanges {
 
