@@ -1,12 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { NewComponent } from './new/new.component';
-import { ThemeListComponent } from './theme-list/theme-list.component';
 import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
   {
-    path: 'theme',
+    path: '',
     pathMatch: 'full',
     component: ThemeComponent,
     data: {
@@ -14,17 +13,19 @@ const routes: Routes = [
     }
   },
   {
-    path: 'theme/new',
+    path: 'new',
     component: NewComponent,
     data: {
-      title: 'NEW THEME'
+      title: 'NEW THEME',
+      isLogged: true
     }
   },
   {
-    path: 'theme/detail/:id',
+    path: 'detail/:id',
     component: DetailComponent,
     data: {
-      title: 'THEME DETAIL'
+      title: 'THEME DETAIL',
+      isLogged: true
     }
   }
 ];

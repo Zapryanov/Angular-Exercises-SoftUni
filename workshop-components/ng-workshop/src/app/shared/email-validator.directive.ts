@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
+import { AbstractControl, ValidationErrors, Validator, NG_VALIDATORS } from '@angular/forms';
 import { emailValidator } from './validators';
 
 @Directive({
@@ -15,7 +15,7 @@ import { emailValidator } from './validators';
 export class EmailValidatorDirective implements Validator {
 
   constructor() { }
-  
+
   validate(control: AbstractControl): ValidationErrors {
     return emailValidator(control);
   }
