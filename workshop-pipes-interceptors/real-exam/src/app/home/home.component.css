@@ -1,0 +1,28 @@
+.position {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+app-header {
+  flex: 1 1 100%;
+}
+
+app-aside {
+  flex: 0 1 15%;
+}
+
+app-car {
+  flex: 0 1 85%;
+
+/*testing added*/
+  margin-left: 15%;
+}
+
+/* app-aside,
+router-outlet {
+  min-height: 95vh;
+} */
+
+app-footer {
+  flex: 1 1 100%;
+}

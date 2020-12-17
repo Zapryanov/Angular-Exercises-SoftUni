@@ -1,0 +1,38 @@
+<header>
+  <div class="wrap-logo">
+      <img class="img" src="../../../assets/car-logo.png" alt="logo" />
+  </div>
+  <nav>
+      <ul>
+          <li>
+            <a routerLink="/about">About Us</a>
+          </li>
+          <li>
+            <a routerLink="/contact">Contact Us</a>
+          </li>
+          <li>
+            <a routerLink="/home">Publications</a>
+          </li>
+          <li *ngIf="isLogged">
+            <a routerLink="/cars/create">Create</a>
+          </li>
+          <li *ngIf="isLogged">
+            <a routerLink="/user/profile">Profile</a>
+          </li>
+          <li *ngIf="!isLogged">
+            <a routerLink="/user/login">Login</a>
+          </li>
+          <li *ngIf="!isLogged">
+            <a routerLink="/user/register">Register</a>
+          </li>
+          <li *ngIf="isLogged">
+            <a (click)="logoutHandler()">Logout</a>
+          </li>
+      </ul>
+    </nav>
+  <div class="user-name">
+      <p>
+          User: {{username}}
+      </p>
+  </div>
+</header>

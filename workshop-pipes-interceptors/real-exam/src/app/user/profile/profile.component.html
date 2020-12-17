@@ -1,0 +1,15 @@
+<!-- <Title title="Profile Page" /> -->
+<h1 class="title">Profile Page</h1>
+<div class="container">
+    <div>
+        <p>
+            <span class="boldText">User: </span>
+            <span class="shadowTitle">{{username}}</span>
+        </p>
+        <p>
+            <span class="boldText">Posts: </span>
+            <span class="price">Post counts: {{carsCount}}</span>
+        </p>
+    </div>
+    <app-car-item *ngFor="let car of allCars" [car]="car"></app-car-item>
+</div>

@@ -1,0 +1,25 @@
+<h1>Details Page</h1>
+<div class="containerPage">
+    <div *ngIf="car" class="wrapImage">
+        <img src={{car.imageUrl}} alt="car" class="img" />
+        <div class="textDiv">
+            <span class="boldText">Description: </span>
+            {{car.description}}
+        </div>
+        <div class="textDiv">
+            <span class="boldText">Mobile phone: </span>
+            {{car.contact}}
+        </div>
+        <div class="textDiv">
+            <span class="boldText">Price: </span>
+            €<span class="price">{{car.price}}</span>
+        </div>
+        <div>
+            <p *ngIf="currentUserId===car.author._id" class="wrapButtons">
+                <button (click)="deleteHandler(car._id)" class="btn" >Delete</button>
+                <button [routerLink]="['/cars/edit', car._id]" class="btn" >Edit</button>
+            </p>
+
+        </div>
+    </div>
+</div>
