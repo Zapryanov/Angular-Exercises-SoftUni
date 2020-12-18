@@ -7,6 +7,7 @@ import { UserService } from '../user/user.service';
 import { storageServiceProvider } from './storage.service';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { AppInterceptor } from './app.interceptor';
 
 
 
@@ -23,7 +24,8 @@ import { AuthGuard } from './guards/auth.guard';
   providers: [
     UserService,
     storageServiceProvider,
-    AuthGuard
+    AuthGuard,
+    AppInterceptor
   ],
   exports: [
     HeaderComponent,

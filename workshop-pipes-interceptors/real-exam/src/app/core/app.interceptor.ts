@@ -21,4 +21,4 @@ export const appInterceptorProvider: Provider = {
   provide: HTTP_INTERCEPTORS,
   useClass: AppInterceptor,
   multi: true
-}
+};
