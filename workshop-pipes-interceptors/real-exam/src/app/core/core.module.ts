@@ -8,6 +8,7 @@ import { storageServiceProvider } from './storage.service';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AppInterceptor } from './app.interceptor';
+import { TimeTextPipe } from './time-text.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { AppInterceptor } from './app.interceptor';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    AsideComponent
+    AsideComponent,
+    TimeTextPipe
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { AppInterceptor } from './app.interceptor';
   exports: [
     HeaderComponent,
     FooterComponent,
-    AsideComponent
+    AsideComponent,
+    TimeTextPipe
   ]
 })
 export class CoreModule { }
